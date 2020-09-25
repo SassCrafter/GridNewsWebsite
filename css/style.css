@@ -1,0 +1,395 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Staatliches&display=swap');
+
+
+/* Variable for Colors and max-width */
+:root {
+	--primary-color: #c72727;
+	--secondary-color: #f99500;
+	--light-color: #f4f4f4;
+	--dark-color: #333;
+	--max-width: 1100px;
+}
+
+.category {
+	--sports-color: #f99500;
+	--ent-color: #a66bbe;
+	--tech-color: #009cff;
+}
+
+
+
+/*  ****************
+	**************** */
+
+/* Reset */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Lato", Arial, Helvetica, sans-serif;
+	line-height: 1.5;
+	background: var(--light-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Staatliches', cursive;
+  margin-bottom: .55rem;
+  line-height: 1.3;
+}
+
+p {
+	margin: .5rem 0;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+img {
+	width: 100%;
+}
+
+
+/*  ****************
+	**************** */
+
+/* Utilities */
+
+.container {
+	max-width: var(--max-width);
+	margin: auto;
+	padding: 0 2rem;
+	overflow: hidden;
+}
+
+.card {
+	background: #fff;
+	padding: 1rem;
+}
+
+.py-1 {
+	padding: 1rem 0;
+}
+.py-2 {
+	padding: 2rem 0;
+}
+
+.category {
+	display: inline-block;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: .55rem;
+	border-radius: 15px;
+	background: transparent;
+	padding: .4rem .6rem;
+}
+.category-sports {background: var(--sports-color);}
+.category-ent { background: var(--ent-color); }
+.category-tech { background: var(--tech-color); }
+
+
+/* Buttons */
+.btn {
+	display: inline-block;
+	color: #fff;
+	border: none;
+	background: var(--dark-color);
+	padding: .5rem 1.5rem;
+	transition: transform 250ms ease-in-out,
+				box-shadow 250ms linear;
+}
+.btn:hover {
+	transform: scale(1.1);
+	box-shadow: 5px 5px 15px rgba(0,0,0, .5);
+}
+.btn-primary { background: var(--primary-color);}
+.btn-secondary { background: var(--secondary-color); }
+.btn-light { background: var(--light-color); }
+
+.btn-block {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+/* Bg */
+.bg-primary {
+	background: var(--primary-color) !important;
+	color: #fff; 
+}
+.bg-secondary {
+	background: var(--secondary-color) !important;
+	color: #fff;
+}
+.bg-dark {
+	background: var(--dark-color) !important;
+	color: #fff;
+}
+
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark a,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary a,
+.bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3,
+.bg-secondary a {
+  color: #fff;
+}
+
+.list li {
+	padding: .5rem;
+	border-bottom: 1px dotted #444;
+}
+.list li a {
+	font-size: 1.1rem;
+	transition: color 250ms ease;
+}
+.list li a:hover {
+	color: var(--primary-color) !important;
+}
+
+.l-heading {
+	font-size: 3rem;
+}
+
+
+
+/* Inner Page grid container */
+.page-container {
+	display: grid;
+	grid-template-columns: 5fr 2fr;
+	grid-gap: 2rem;
+}
+
+.page-container > *:first-child {
+	grid-row: 1 / span 3;
+}
+
+
+/*  ****************
+	**************** */
+#main-nav {
+	background: #fff;
+	position: sticky;
+	top: 0;
+	z-index: 50;
+}
+
+#main-nav .container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 6fr 3fr 2fr;
+	padding: 1rem 2rem;
+	align-items: center;
+}
+
+#main-nav .logo {
+	width: 180px;
+}
+
+#main-nav ul {
+	justify-self: end;
+	display: flex;
+}
+
+#main-nav ul a {
+	text-transform: capitalize;
+	font-size: 1.1rem;
+	font-weight: bold;
+	padding: .75rem;
+	margin: 0 .3rem;
+	transition: background 250ms linear;
+}
+
+#main-nav ul a.current {
+	background: var(--primary-color);
+	color: #fff;
+}
+
+#main-nav ul a:hover {
+	background: var(--light-color);
+	color: var(--dark-color);
+}
+
+
+#main-nav .social {
+	justify-self: center;
+}
+
+#main-nav .social i {
+	font-size: 1.3rem;
+	color: #777;
+	margin-right: .25rem;
+	padding: .5rem;
+	transition: transform 250ms ease-in-out,
+				color 250ms linear;
+}
+
+#main-nav .social i:hover {
+	transform: scale(1.1);
+	color: var(--primary-color);
+}
+
+
+/*  ****************
+	**************** */
+
+/* Showcase */
+#showcase {
+	color: #fff;
+	background: #333;
+	padding: 2rem;
+	position: relative;
+}
+
+#showcase::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: url(../images/featured.jpg) no-repeat center center/cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: .4;
+}
+
+#showcase .showcase-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	justify-content: center;
+	height: 50vh;
+}
+
+#showcase .showcase-content {
+	z-index: 2;
+}
+
+#showcase .showcase-content p {
+	margin-bottom: 1rem;
+}
+
+
+/*  ****************
+	**************** */
+
+article .meta {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;;
+	height: 50px;
+	background: var(--light-color);
+	padding: .5rem;
+}
+
+article .meta i {
+	margin-right: .5rem;
+}
+
+/* Home Articles */
+
+.home-articles .articles-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+
+.home-articles .articles-container .card {
+	background: #fff;
+	padding: 1rem;
+}
+
+
+/* Split First and Last card in two columns */
+.home-articles .articles-container .card:first-child,
+.home-articles .articles-container .card:last-child {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
+}
+
+/* First and Last card take 2 columns */
+.home-articles .articles-container .card:first-child {
+	grid-column: 1 / span 2;
+}
+.home-articles .articles-container .card:last-child {
+	grid-column: 2 / span 2;
+}
+
+
+
+.home-articles .articles-container .card h3 {
+	font-size: 1.5rem;
+}
+.home-articles .articles-container .card p {
+	font-size: 1.2rem;
+	margin: 1rem 0;
+}
+
+
+/*  ****************
+	**************** */
+
+/* Footer */
+#main-footer {
+	background: var(--dark-color);
+	color: #fff;
+}
+
+#main-footer h3,
+#main-footer a {
+	color: #fff;
+}
+
+#main-footer .footer-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 2rem;
+	justify-content: center;
+	align-items: start;
+}
+
+#main-footer .footer-container .footer-item:last-child {
+	grid-column: 1 / span 4;
+	background: #444;
+	text-align: center;
+}
+#main-footer .footer-container .footer-item:last-child p {
+	font-size: .75rem;
+}
+
+#main-footer .footer-item img {
+	width: 150px;
+	margin-bottom: .5rem;
+}
+
+#main-footer .footer-item p {
+	font-size: 1.1rem;
+}
+
+#main-footer .footer-item input[type="email"] {
+	width: 90%;
+	padding: .5rem;
+	margin-bottom: .5rem;
+}
+
+#main-footer .footer-item input[type="submit"] {
+	width: 90%;
+}
+
